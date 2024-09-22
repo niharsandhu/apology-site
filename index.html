@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>
+        <script>
+            function playAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+            }
+        </script>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">I’m sorry for idk what but I love you</h1>
+                <h1 class = "header_text">Apology accepted ?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+    var noButton = document.getElementById('noButton');
+    var buttonWidth = noButton.offsetWidth;
+    var buttonHeight = noButton.offsetHeight;
+
+    // Set limits for mobile devices
+    if (window.innerWidth <= 768) {
+        // Reduce the maximum movement area further (20px padding from the screen edges)
+        var maxX = window.innerWidth - buttonWidth - 40;
+        var maxY = window.innerHeight - buttonHeight - 40;
+
+        // Minimum positions to avoid negative values
+        var minX = 20;
+        var minY = 20;
+    } else {
+        // Use a smaller movement area for desktop as well with some padding
+        var maxX = window.innerWidth - buttonWidth - 100;
+        var maxY = window.innerHeight - buttonHeight - 100;
+
+        // Minimum positions for desktop
+        var minX = 50;
+        var minY = 50;
+    }
+
+    // Calculate new positions with the tighter limits applied
+    var x = Math.random() * (maxX - minX) + minX;
+    var y = Math.random() * (maxY - minY) + minY;
+
+    // Update button position
+    noButton.style.left = `${x}px`;
+    noButton.style.top = `${y}px`;
+}
+
+
+
+                </script> 
+            </div>
+        </div>
+        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
+            <source src="Coldplay - Fix You Lyrics-[AudioTrimmer.com].mp3" type="audio/mp3" />
+            <embed height="100" width="100" src="Coldplay - Fix You Lyrics-[AudioTrimmer.com].mp3" />
+        </audio>
+    </body> 
+</html>
